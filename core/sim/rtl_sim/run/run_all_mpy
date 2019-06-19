@@ -35,11 +35,11 @@ echo " ===================================================="
 echo ""
 
 # Hardware multiplier test patterns
-../bin/msp430sim mpy_basic   | tee  ./log/mpy_basic.log
-../bin/msp430sim mpy_mpy     | tee  ./log/mpy_mpy.log
-../bin/msp430sim mpy_mpys    | tee  ./log/mpy_mpys.log
-../bin/msp430sim mpy_mac     | tee  ./log/mpy_mac.log
-../bin/msp430sim mpy_macs    | tee  ./log/mpy_macs.log
+../bin/msp430sim mpy_basic   2>&1 | tee  ./log/mpy_basic.log
+../bin/msp430sim mpy_mpy     2>&1 | tee  ./log/mpy_mpy.log
+../bin/msp430sim mpy_mpys    2>&1 | tee  ./log/mpy_mpys.log
+../bin/msp430sim mpy_mac     2>&1 | tee  ./log/mpy_mac.log
+../bin/msp430sim mpy_macs    2>&1 | tee  ./log/mpy_macs.log
 
 grep SKIPPED ./log/*.log
 grep FAILED  ./log/*.log
